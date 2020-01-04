@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nhân viên</title>
+    <link rel="stylesheet" href="/public/stylesheets/waiter.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">`
+        <div class="header__left">
+            <section class="header__layout-elm">
+                <img src="/public/images/waiter/icons/user.svg" alt="user-icon">
+            </section>
+            <p class="yourname">Hồ Văn Vy</p>
+        </div>
+        <div class="header__right">
+            <section class="header__layout-elm" id="credit-card-btn">
+                <img src="/public/images/waiter/icons/credit-card.svg" alt="credit-card-icon">
+            </section>
+            <section class="header__layout-elm" id="notification-btn">
+                <img src="/public/images/waiter/icons/notification-has.svg" alt="notification-icon">
+            </section>
+        </div>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- MAIN -->
+    <main>
+        <ul id="coffee-list" class="list-merchandise"></ul>
+        <ul id="tea-list" class="list-merchandise"></ul>
+        <ul id="juice-list" class="list-merchandise"></ul>
+        <ul id="soft-drink-list" class="list-merchandise"></ul>
+        <ul id="ice-cream-list" class="list-merchandise"></ul>
+    </main>
+    <!-- END MAIN -->
+
+    <!-- RIGHT-TAB -->
+    <section class="right-tab">
+        <div id="right-tab__table">
+            <p id="numTable">Bàn</p>
+        </div>
+        <div class="right-tab__layout right-tab--active" id="coffee-icon">
+            <img src="/public/images/waiter/icons/coffee.svg" alt="coffee-icon">
+        </div>
+        <div class="right-tab__layout" id="tea-icon">
+            <img src="/public/images/waiter/icons/tea.svg" alt="tea-icon">
+        </div>
+        <div class="right-tab__layout" id="juice-icon">
+            <img src="/public/images/waiter/icons/juice.svg" alt="juice-icon">
+        </div>
+        <div class="right-tab__layout" id="soft-drink-icon">
+            <img src="/public/images/waiter/icons/soft-drink.svg" alt="soft-drink-icon">
+        </div>
+        <div class="right-tab__layout" id="ice-cream-icon">
+            <img src="/public/images/waiter/icons/ice-cream.svg" alt="ice-cream-icon">
+        </div>
+    </section>
+    <!-- END RIGHT-TAB -->
+
+    <!-- LEFT-MENU -->
+    <div class="cover-full-page"></div>
+    <section class="left-menu">
+        <div class="left-menu__avatar">
+            <img src="/public/images/waiter/avt_fb.jpg" alt="avt_fb">
+            <p>Hồ Văn Vy</p>
+        </div>
+
+        <ul>
+            <li>
+                <div>
+                    <img src="/public/images/waiter/icons/user-info.svg" alt="user-info-icon">
+                </div>
+                <p>Thông tin cá nhân</p>
+            </li>
+            <li>
+                <div>
+                    <img src="/public/images/waiter/icons/shop.svg" alt="user-info-icon">
+                </div>
+                <p>Thông tin quán</p>
+            </li>
+            <li>
+                <div>
+                    <img src="/public/images/waiter/icons/logout.svg" alt="user-info-icon">
+                </div>
+                <p>Đăng xuất</p>
+            </li>
+        </ul>
+    </section>
+    <!-- END LEFT-MENU -->
+
+    <!-- PAY -->
+    <section class="pay-page side-page">
+        <ul class="pay-page__right-btn">
+            <li style="background-color: #F2994A;">
+                <p id="numTable2">Bàn</p>
+            </li>
+            <li onclick="emitList()"><img src="/public/images/waiter/icons/send.svg" alt=""></li>
+            <li><img src="/public/images/waiter/icons/payment-method.svg" alt=""></li>
+        </ul>
+
+        <header>
+            <div class="left-arrow">
+                <img src="/public/images/waiter/icons/left-arrow.svg" alt="left-arrow-icon">
+            </div>
+            <p>Thanh toán</p>
+            <div>
+                <img src="/public/images/waiter/icons/credit-card.svg" alt="credit-card-icon">
+            </div>
+        </header>
+
+        <div class="pay-page__main">
+            <div class="pay-pal__total">
+                <p>Tổng: </p>
+                <span id="sumPrice">0</span>
+            </div>
+            <ul class="pay-pal__list" id="pay-pal__list">
+
+            </ul>
+    </section>
+    <!-- END PAY -->
+
+    <!-- NOTIFICATION PAGE -->
+    <section class="notifcation-page side-page">
+        <header>
+            <div class="left-arrow">
+                <img src="/public/images/waiter/icons/left-arrow.svg" alt="left-arrow-icon">
+            </div>
+            <p>Thông báo</p>
+            <div>
+                <img src="/public/images/waiter/icons/notification-has.svg" alt="credit-card-icon">
+            </div>
+        </header>
+    </section>
+    <!-- END NOTIFICATION PAGE -->
+
+    <!-- MODAL BOX -->
+    <section class="modal-box modal-box--close">
+        <div class="modal-box__header">
+            <div class="modal-box__icon" id="modal-box__icon-reverse">
+                <img src="/public/images/waiter/icons/reverse.svg" alt="reverse-icon">
+            </div>
+
+            <div class="modal-box__title">
+                <div>
+                    <p>Tổng: </p>
+                    <span>12</span>
+                </div>
+                <div>
+                    <p>Trống: </p>
+                    <span>3</span>
+                </div>
+            </div>
+
+            <div class="modal-box__icon" id="modal-box__icon-close">
+                <img src="/public/images/waiter/icons/close.svg" alt="close-icon">
+            </div>
+        </div>
+        <div class="modal-box__main">
+            <sript>
+            </sript>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-1">1</div>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-2">2</div>
+            <div class="modal-box__table modal-box__table--empty" onclick="selectTable(this)" id="table-3">3</div>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-4">4</div>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-5">5</div>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-6">6</div>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-7">7</div>
+            <div class="modal-box__table modal-box__table--empty" onclick="selectTable(this)" id="table-8">8</div>
+            <div class="modal-box__table modal-box__table--empty" onclick="selectTable(this)" id="table-9">9</div>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-10">10</div>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-11">11</div>
+            <div class="modal-box__table modal-box__table--full" onclick="selectTable(this)" id="table-12">12</div>
+        </div>
+    </section>
+    <!-- END MODAL BOX -->
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/javascripts/waiter.js"></script>
+
+</body>
+
+</html>
