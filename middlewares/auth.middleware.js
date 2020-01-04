@@ -1,16 +1,23 @@
 const jwt = require("jsonwebtoken");
 
-module.exports = function(req, res, next) {
+function authMiddleware(req, res, next) {
     if (req.signedCookies.access_token) {
         let token = req.signedCookies.access_token;
-        jwt.verify(token, process.env.SECRET_KEY, (err, decode) => {
+        jwt.verify(token, process.env.JWT_SECRET, (err, decode) => {
             if (err) {
-                next("Token invalid");
+                // next("Token invalid");
+                res.redirect("/login");
+                return;
             } else {
                 next();
+                return;
             }
         });
     } else {
-        next("Unauthorizated");
+        // next("Unauthorizated");
+        res.redirect("/login");
+        return;
     }
-};
+}
+
+module.exports = authMiddleware;

@@ -24,6 +24,9 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const loginRouter = require("./routes/login.route");
 const waiterRouter = require("./routes/waiter.route");
+const logoutRouter = require("./routes/logout.route");
+
+const authMiddleware = require("./middlewares/auth.middleware");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -38,9 +41,11 @@ app.use(
     express.static(path.join(__dirname, "public"))
 );
 
-app.use("/waiter", waiterRouter);
+app.use("/", indexRouter);
+app.use("/waiter", authMiddleware, waiterRouter);
 app.use("/users", usersRouter);
 app.use("/login", loginRouter);
+app.use("/logout", logoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

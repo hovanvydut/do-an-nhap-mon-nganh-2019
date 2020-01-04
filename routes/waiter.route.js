@@ -6,11 +6,6 @@ const authMiddleware = require("../middlewares/auth.middleware");
 
 router.get("/", function(req, res, next) {
     res.render("waiter");
-    /* if (err == "") {
-        res.send("Waiter page");
-    } else {
-        res.redirect("/login");
-    } */
 });
 
 module.exports = router;
