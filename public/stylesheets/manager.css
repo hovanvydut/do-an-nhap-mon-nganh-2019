@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+header>h1 {
+    text-align: center;
+    margin: 0px;
+}
+
+header {
+    background-image: url("/public/images/bgHeader.jpg");
+    text-align: center;
+    color: red;
+    padding: 20px;
+    background-color: greenyellow;
+}
+
+aside {
+    transition: all 1s;
+    width: 300px;
+    background: white;
+    height: 100vh;
+    position: fixed;
+    right: -300px;
+    top: 0px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+aside>h3 {
+    padding: 20px 30px;
+    color: white;
+    margin: 0px;
+    background: red;
+}
+
+aside>h5 {
+    color: red;
+
+    padding-left: 40px;
+}
+
+main {
+    display: flex;
+    margin: 30px;
+}
+
+.logo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 134px;
+}
+
+.info {
+    color: slateblue;
+}
+
+.iconNoti {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 10px;
+    color: blue;
+    border: 1px solid black;
+    font-size: 163%;
+}
+
+.iconNoti:hover {
+    transition: all 0.3s;
+    background-color: white;
+    color: red;
+}
+
+.listOrder {
+    flex: 5;
+}
+
+.listDrink {
+    flex: 2;
+}
+
+section {}
+
+table {}
+
+thead {
+    text-align: center;
+    background-color: chocolate;
+}
+
+.iconCheck {
+    display: block !important;
+    text-align: center;
+    font-size: 250%;
+    color: green;
+}
+
+.iconCancel {
+    display: block !important;
+    text-align: center;
+    font-size: 250%;
+    color: red;
+}
+
+tbody>tr>td {
+    padding-left: 10px;
+}

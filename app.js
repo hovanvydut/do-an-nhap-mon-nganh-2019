@@ -43,6 +43,9 @@ app.use(
 
 app.use("/", indexRouter);
 app.use("/waiter", authMiddleware, waiterRouter);
+app.use("/manager", function(req, res, next) {
+    res.render("manager");
+});
 app.use("/users", usersRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);

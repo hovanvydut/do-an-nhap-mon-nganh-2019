@@ -13,22 +13,22 @@ module.exports = {
         let password = req.body.password;
 
         let user = await userModel.findOne({ email, password });
-        console.log(user);
         if (user !== null) {
-            if (user.role == "waiter") {
-                let payload = {
-                    userID: user._id,
-                    name: user.name,
-                    email: user.email,
-                    role: user.role
-                };
-                let token = jwt.sign(payload, jwtSecret, {
-                    algorithm: "HS256",
-                    expiresIn: "4h"
-                });
-                res.cookie("access_token", token, { signed: true });
-                res.redirect("/waiter");
-            }
+            let payload = {
+                userID: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role
+            };
+
+            let token = jwt.sign(payload, jwtSecret, {
+                algorithm: "HS256",
+                expiresIn: "4h"
+            });
+
+            res.cookie("access_token", token, { signed: true });
+            if (user.role == "waiter") res.redirect("/waiter");
+            if (user.role == "manager") res.redirect("/manager");
         } else {
             res.redirect("/login");
         }

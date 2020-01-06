@@ -1,5 +1,5 @@
 const socket = io("http://localhost:3000");
-var role = "NV1";
+// var role = "NV1";
 let tea, juice, coffee, softDrink, iceCream;
 socket.on("menu-list", function(data) {
     /* load list menu from db */
@@ -193,7 +193,6 @@ modalboxIconClose.addEventListener("click", function() {
 } */
 // HUy tuong xu lis nhaaaaa
 function selectTable(e) {
-    console.log(e.innerText);
     document.getElementById("numTable").innerText = e.innerText;
     document.getElementById("numTable2").innerText = e.innerText;
     modalbox.classList.add("modal-box--close");
@@ -202,22 +201,27 @@ function selectTable(e) {
         arr2[i].innerText = "0";
     }
 }
+
 function emitList() {
     if (document.getElementById("numTable").innerText == "Bàn") {
         alert("Chưa chọn bàn");
         return 0;
     }
-    data = {
+    let yourname = document.getElementsByClassName("yourname")[0];
+
+    let data = {
         numTable: document.getElementById("numTable").innerText,
-        role: role,
-        list: []
+        userID: yourname.dataset.userid,
+        role: yourname.dataset.role,
+        list: [],
+        time: new Date().toUTCString()
     };
+
     // Lay du lieu
-    arr = document.getElementsByClassName("name");
-    arr2 = document.getElementsByClassName("list-item__count");
+    let arr = document.getElementsByClassName("name");
+    let arr2 = document.getElementsByClassName("list-item__count");
     for (var i = 0; i < arr.length; i++) {
         if (arr2[i].innerText != "0") {
-            console.log(arr[i].innerText + "-" + arr2[i].innerText);
             data.list.push({
                 name: arr[i].innerText,
                 num: Number(arr2[i].innerText)

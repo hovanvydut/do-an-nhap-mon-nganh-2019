@@ -18,7 +18,9 @@
             <section class="header__layout-elm">
                 <img src="/public/images/waiter/icons/user.svg" alt="user-icon">
             </section>
-            <p class="yourname">Hồ Văn Vy</p>
+            <p class="yourname" data-userid=<%= userInfo.userID%> data-role=<%= userInfo.role%>>
+                <%= userInfo.name %>
+            </p>
         </div>
         <div class="header__right">
             <section class="header__layout-elm" id="credit-card-btn">
@@ -69,7 +71,7 @@
     <section class="left-menu">
         <div class="left-menu__avatar">
             <img src="/public/images/waiter/avt_fb.jpg" alt="avt_fb">
-            <p>Hồ Văn Vy</p>
+            <p><%= userInfo.name %></p>
         </div>
 
         <ul>

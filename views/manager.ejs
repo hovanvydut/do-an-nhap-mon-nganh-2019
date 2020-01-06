@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/stylesheets/manager.css">
+    <script src="https://kit.fontawesome.com/038c384707.js"></script>
+    <title>MANAGER</title>
+</head>
+
+<body onload="getAllDataFromDBHistories()">
+    <header>
+        <h1>BỘ PHẬN PHA CHẾ</h1>
+        <i onclick="showNoti()" class="iconNoti fas fa-bell"></i>
+        <img class="logo" src="public/images/logo.png" alt="">
+        <p class="info">
+            Khu vực pha chế: Tầng 2 <br>
+            Ca làm việc: Buổi sáng <br>
+            Quản lí: Ngọc trinh
+        </p>
+    </header>
+
+    <main>
+        <section class="listOrder">
+
+            <table id="listOrder" border="solid">
+                <colgroup>
+                    <col width="100">
+                    <col width="100">
+                    <col width="200">
+                    <col width="500">
+                    <col width="80">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <td>
+                            Bàn số?
+                        </td>
+                        <td>
+                            Nhân viên
+                        </td>
+                        <td>
+                            Thời gian
+                        </td>
+                        <td>
+                            Danh sách thức ún
+                        </td>
+                        <td>
+                            Thao tác
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            01
+                        </td>
+                        <td>
+                            NV_001
+                        </td>
+                        <td>
+                            8:00 21/12/2019
+                        </td>
+                        <td>
+                            <ul>
+                                <li>1 - Cafe đen</li>
+                                <li>2 - Cafe sữa</li>
+                                <li>1 - Sting</li>
+                                <li>2 - Pepsi</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <i onclick="Done(this)" class="iconCheck fas fa-check-square"></i><br>
+                            <i onclick="Cancel(this)" class="iconCancel fas fa-window-close"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            01
+                        </td>
+                        <td>
+                            NV_001
+                        </td>
+                        <td>
+                            8:00 21/12/2019
+                        </td>
+                        <td>
+                            <ul>
+                                <li>1 - Cafe đen</li>
+                                <li>2 - Cafe sữa</li>
+                                <li>1 - Sting</li>
+                                <li>2 - Pepsi</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <i onclick="Done(this)" class="iconCheck fas fa-check-square"></i><br>
+                            <i onclick="Cancel(this)" class="iconCancel fas fa-window-close"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            01
+                        </td>
+                        <td>
+                            NV_001
+                        </td>
+                        <td>
+                            8:00 21/12/2019
+                        </td>
+                        <td>
+                            <ul>
+                                <li>1 - Cafe đen</li>
+                                <li>2 - Cafe sữa</li>
+                                <li>1 - Sting</li>
+                                <li>2 - Pepsi</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <i onclick="Done(this)" class="iconCheck fas fa-check-square"></i><br>
+                            <i onclick="Cancel(this)" class="iconCancel fas fa-window-close"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            01
+                        </td>
+                        <td>
+                            NV_001
+                        </td>
+                        <td>
+                            8:00 21/12/2019
+                        </td>
+                        <td>
+                            <ul>
+                                <li>1 - Cafe đen</li>
+                                <li>2 - Cafe sữa</li>
+                                <li>1 - Sting</li>
+                                <li>2 - Pepsi</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <i onclick="Done(this)" class="iconCheck fas fa-check-square"></i><br>
+                            <i onclick="Cancel(this)" class="iconCancel fas fa-window-close"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        <section class="listDrink">
+            <table border="solid">
+                <colgroup>
+                    <col width="500">
+                    <col width="200">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <td>
+                            Thức uống
+                        </td>
+                        <td>
+                            Số lượng
+                        </td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="nameDrink">
+                            Cafe đen
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nameDrink">
+                            Cafe sữa
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nameDrink">
+                            Ma túy
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nameDrink">
+                            Đập đá
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <button style="position: fixed;" onclick="add()">alooo</button>
+    <aside id="noti">
+
+        <h3 onclick="hideNoti()"> <i class="fas fa-exclamation-triangle"></i> Thông báo <i
+                class="fas fa-arrow-right"></i></h3>
+        <h5>Thông báo 1 nè</h5>
+        <h5>Thông báo 2 nè</h5>
+        <h5>Thông báo 3 nè</h5>
+        <h5>Thông báo 4 nè</h5>
+    </aside>
+
+    <!-- SCRIPT -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="public/javascripts/manager.js">
+    </script>
+</body>
+
+</html>

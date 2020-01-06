@@ -5,7 +5,8 @@ const jwt = require("jsonwebtoken");
 const authMiddleware = require("../middlewares/auth.middleware");
 
 router.get("/", function(req, res, next) {
-    res.render("waiter");
+    const userInfo = res.locals.userInfo;
+    res.render("waiter", userInfo);
 });
 
 module.exports = router;
