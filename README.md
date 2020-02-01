@@ -7,6 +7,6 @@ Thi vào ngày 10/01/2020 với dự án: "Website quản lí dự án"
 
 # About me
 
-Hi! I'm Vy, 18 years and dont have wife :))))
-My email: hovanvydut@gmail.com
-My phone: 096 188 2993
+-   Hi! I'm Vy, 18 years and dont have wife :))))
+-   My email: hovanvydut@gmail.com
+-   My phone: 096 188 2993
